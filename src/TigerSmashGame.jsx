@@ -92,8 +92,7 @@ function createLevel(levelNumber) {
       for (let i = 0; i < pitLen; i += 1) {
         const tile = cursor + i
         if (
-          tile <= safeStartTile ||
-          tile <= safeEndTile ||
+          (tile >= safeStartTile && tile <= safeEndTile) ||
           (tile >= safeCheckpointStart && tile <= safeCheckpointEnd) ||
           tile >= safeGoalStart
         ) {
